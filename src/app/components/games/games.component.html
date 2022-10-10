@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <span>תחרויות</span>
+  </mat-toolbar>
+
+  <div *ngFor="let match of matches | async">
+<mat-card>
+    <mat-card-header>
+    <mat-card-title>{{match.oponent_a}} - {{match.oponent_b}}</mat-card-title>
+    <mat-card-subtitle>{{match.date | date: 'short'}}</mat-card-subtitle>
+    
+    </mat-card-header>
+    <img mat-card-image src="{{match.imageUrl}}" alt="Sport Match">
+    <mat-card-content>
+        <p>{{competition.description}}</p>
+      </mat-card-content>
+</mat-card>
+</div>

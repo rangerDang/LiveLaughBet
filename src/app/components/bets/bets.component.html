@@ -1,0 +1,8 @@
+<div *ngFor="let bet of bets">
+  <mat-card>
+      <mat-card-header>
+      <mat-card-title>{{bet.opponent_a}} - {{bet.opponent_b}}</mat-card-title>
+      <mat-card-subtitle>{{usersDictionary[bet.user].name}}</mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+  </div>

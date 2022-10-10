@@ -1,0 +1,16 @@
+<mat-toolbar>
+    <span>תחרויות</span>
+  </mat-toolbar>
+
+  <div *ngFor="let competition of competitions | async">
+<mat-card routerLink="../competition/{{competition.id}}/matches">
+    <mat-card-header>
+    <mat-card-title>{{competition.name}}</mat-card-title>
+    <mat-card-subtitle>{{competition.startDate | date: 'short'}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{competition.imageUrl}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>{{competition.description}}</p>
+      </mat-card-content>
+</mat-card>
+</div>

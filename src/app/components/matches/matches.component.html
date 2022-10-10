@@ -1,0 +1,12 @@
+  <div *ngFor="let matchId of Object.keys(matches)">
+<mat-card routerLink="../../../bets/{{competitionId}}/{{match.id}}">
+    <mat-card-header>
+    <mat-card-title>{{matches[matchId].opponent_a}} - {{matches[matchId].opponent_b}}</mat-card-title>
+    <mat-card-subtitle>{{matches[matchId].startDate | date: 'short'}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/221000_-_Football_Jason_Rand_action_2_-_3b_-_Sydney_2000_match_photo.jpg/1600px-221000_-_Football_Jason_Rand_action_2_-_3b_-_Sydney_2000_match_photo.jpg" alt="Sport Match">
+    <mat-card-content>
+      <p>{{matches[matchId].location}}</p>
+      </mat-card-content>
+</mat-card>
+</div>

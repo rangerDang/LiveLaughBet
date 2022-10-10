@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1>ההימור</h1>
+  </mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #snav mode="over">
+      <mat-nav-list>
+          <a mat-list-item routerLink=".">משחקים</a>
+          <a mat-list-item (click)="logout()">יציאה</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        
+        <div *ngIf="afAuth.authState | async as user; else showLogin">
+            <router-outlet></router-outlet>
+          </div>
+          <ng-template #showLogin>
+              <mat-card>
+                <mat-card-header>
+                <mat-card-title>כניסה למערכת</mat-card-title>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="login()">כניסה עם גוגל</button>
+                  </mat-card-actions>
+            </mat-card>
+            </ng-template>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
